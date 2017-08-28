@@ -1,12 +1,23 @@
 "use strict"
 
 // React is required in all out components, as JSX will still require it
-import React from 'react';
+import React, { Component } from 'react';
 
-// Component HTML input - that allows users to search
-const SearchBar = () => {
-    return <input/>;
-};
+
+// Class based component 
+class SearchBar extends Component {
+    // render function
+    render(){
+        return (
+            <input />
+        ); // return JSX
+    }
+}
+
+
+
+//create instance  #for example purpose only
+//var instance = new SearchBar();
 
 // Export to allow outside use
 export default SearchBar;
