@@ -3,9 +3,19 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
+//Import React components
+import SearchBar from './components/search_bar';
+
+//youtube API key
+const API_KEY = 'AIzaSyCsxEHAsJDPlQTXVLg70PwuUFzPMOtqAzE';
+
 // Using JSX
-const App = function() {
-    return <div>Hi!</div>;
+const App = () => {
+    return (
+        <div>
+            <SearchBar />
+        </div>
+        );
 };
 
 //Insert React to the DOM
