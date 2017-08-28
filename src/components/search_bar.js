@@ -3,16 +3,22 @@
 // React is required in all out components, as JSX will still require it
 import React, { Component } from 'react';
 
-
 // Class based component 
 class SearchBar extends Component {
-    // render function
+    //initialize state 
+    constructor(props){ //automatically run when you call SearchBar
+        // This is the Constructor for the parent method - Which is Component
+        super(props);
+
+        //initialize state - creating state
+        this.state = {term: ''};
+    }
     render(){
         return (
-                // note - onChange is the event emitter used by html
-                //<input onChange={this.onInputChange}/>
-                //<input onChange={(event) => {console.log(event.target.value);}}/> // arrow function
-                <input onChange={event => console.log(event.target.value)}/> // cleaner arrow function
+            <div>
+                <input onChange={event => this.setState({ term: event.target.value})}/> <span> </span>
+                Value of the input: {this.state.term}
+            </div>
             ); // return JSX
     }
 
@@ -22,13 +28,8 @@ class SearchBar extends Component {
     //     console.log(event.target.value); //output = text written within input box
     // }
 
-    
 }
 
-
-
-//create instance  #for example purpose only
-//var instance = new SearchBar();
 
 // Export to allow outside use
 export default SearchBar;
