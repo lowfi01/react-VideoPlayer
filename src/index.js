@@ -20,30 +20,32 @@ class App extends Component{
     constructor(props){
         super(props)
 
-        
         this.state = { 
             videos: [],
             selectedVideo: null
         }
 
-
-        // takes object ({API-key, searchTerm}, callback);
-        // - similar process to AJAX pass(configuration, callback)
-        YTSearch({key: API_KEY, term: 'cute cats'}, (videos) => {
-            //Search for video & Update state, then set selectedVideo to the first Video in array
-            this.setState({ 
-                videos: videos,
-                selectedVideo: videos[0]
-            });
-            
-        });
+        // Default value for search is still important
+        this.videoSearch('cute cats');   
 
     }
+
+        videoSearch(SearchTerm){
+             // takes object ({API-key, searchTerm}, callback);
+        // - similar process to AJAX pass(configuration, callback)
+        YTSearch({key: API_KEY, term: SearchTerm}, (videos) => {
+            //Search for video & Update state, then set selectedVideo to the first Video in array
+                this.setState({ 
+                    videos: videos,
+                    selectedVideo: videos[0]
+                });
+            });
+        }
 
         render(){
             return (
                 <div>
-                    <SearchBar/>
+                    <SearchBar onSearchTermChange={term => this.videoSearch({term})}/>
                     <VideoDetail video={this.state.selectedVideo} />
                     <VideoList 
                         onVideoSelect={callBackVideo => this.setState({selectedVideo:callBackVideo})}
