@@ -7,11 +7,14 @@ import React from 'react';
     // const video = props.video;
     // console.log(video)
 
-const VideoListItem = ({video}) => { //ES6 des-constructor method 
+const VideoListItem = ({video, onVideoSelect}) => { //ES6 des-constructor method 
     const imageUrl = video.snippet.thumbnails.default.url;
     //console.log(video);
+
+
+
     return (
-        <li className="list-group-item"> 
+        <li onClick={() => { onVideoSelect(video)}} className="list-group-item"> 
             <div className="video-list media">
                 <div className="media-left">
                     <img className="media-object" src={imageUrl}/>

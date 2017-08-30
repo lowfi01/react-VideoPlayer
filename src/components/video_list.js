@@ -16,11 +16,17 @@ const VideoList = (props) => {
             // Each loop iteration will create a video from the array
             // We then create a JSX tag that links to VideoListItem
             // We then pass the prop down containing the Individual Video data
-            return <VideoListItem key={video.etag} video={video} />
+            return (
+                <VideoListItem 
+                    onVideoSelect={props.onVideoSelect}
+                    key={video.etag} 
+                    video={video} 
+                    />
+                    );
         })
 
 
-    return(// 
+    return(
         <ul className="col-md-4 list-group">
                 {videoItems}
         </ul>
