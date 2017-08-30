@@ -7,12 +7,22 @@
 
 import React from 'react';
 
-
+//IMPORT COMPONENT
+import VideoListItem from './video_list_item';
 
 const VideoList = (props) => {
-    return(
+    //Create Map
+        const videoItems = props.videos.map((video) => {
+            // Each loop iteration will create a video from the array
+            // We then create a JSX tag that links to VideoListItem
+            // We then pass the prop down containing the Individual Video data
+            return <VideoListItem video={video} />
+        })
+
+
+    return(// 
         <ul className="col-md-4 list-group">
-            {props.videos.length}
+                {videoItems}
         </ul>
     );
 };
