@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 
 // Class based component 
-class SearchBar extends Component {
+class SearchBar extends Component{
     //initialize state 
     constructor(props){ //automatically run when you call SearchBar
         // This is the Constructor for the parent method - Which is Component
@@ -13,12 +13,13 @@ class SearchBar extends Component {
         //initialize state - creating state
         this.state = {term: ''};
     }
+    
     render(){
         return (
             <div>
                 <input 
-                    onChange={event => this.setState({ term: event.target.value})}/>
-                 <input value={this.state.term}/>
+                    value={this.state.term}
+                    onChange={event => this.setState({ term: event.target.value })}/>
             </div>
             ); // return JSX
     }
