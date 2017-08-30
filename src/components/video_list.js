@@ -16,7 +16,7 @@ const VideoList = (props) => {
             // Each loop iteration will create a video from the array
             // We then create a JSX tag that links to VideoListItem
             // We then pass the prop down containing the Individual Video data
-            return <VideoListItem video={video} />
+            return <VideoListItem key={video.etag} video={video} />
         })
 
 
