@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
+import _ from 'lodash';
 
 
 // API search - YouTubeSearch
@@ -43,6 +44,8 @@ class App extends Component{
         }
 
         render(){
+            
+
             return (
                 <div>
                     <SearchBar onSearchTermChange={term => this.videoSearch({term})}/>
