@@ -23,7 +23,7 @@ class App extends Component{
 
         // takes object ({API-key, searchTerm}, callback);
         // - similar process to AJAX pass(configuration, callback)
-        YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
+        YTSearch({key: API_KEY, term: 'cute cats'}, (videos) => {
             //response data - which is the videos urls from youtube
             this.setState({ videos: videos });
             //es6 - syntax
